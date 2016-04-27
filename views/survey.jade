@@ -1,0 +1,36 @@
+extends layout
+
+block content
+	h1= title
+	p #{success}
+	p Enter data:
+	form#add(name="add",method="post",action="/survey")
+		p Name: 
+			input(type="text", placeholder="Name", name="name")
+			span   Surname:  
+			input(type="text", placeholder="Surname", name="surname")
+		p Location: 
+			input(type="text", placeholder="Location", name="location")
+		hr
+		p Type: 
+			input(type="number" min="0" max="5" value="0" name="type")
+		p 1.
+			input(type="number", min="0", max="4", value="0" name="timeused")
+		p 2.
+			input(type="number", min="0", max="2", value="0" name="count")
+		p 3.
+			input(type="number", min="0", max="5", value="0" name="athome")
+		p 4.
+			input(type="number", min="0", max="5", value="0" name="silent")
+		p 5.
+			input(type="number", min="0", max="5", value="0" name="devices")
+		p 6.
+			input(type="number", min="0", max="5", value="0" name="group")
+		p 7.
+			input(type="number", min="0", max="5", value="0" name="loud")
+		hr
+		p Note:
+		textarea(placeholder="Note", name="note")
+		hr
+		br
+		button(type="submit") Submit
