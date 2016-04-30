@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1= title
+	if exp!=undefined
+		p Export return code: #{exp}
+			if exp==0
+				span  (Success)
+			else
+				span  (Partial success/fail)
+	p Total database entries: #{count}
+	form(action="/data/export", method="post" name="export")
+		button(type="submit" title="Exports in JSON and CSV format") Export database

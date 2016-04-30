@@ -32,5 +32,9 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-# database files
+# database and database backup dir
 data
+backup
+
+# db backup script
+backup.bat
