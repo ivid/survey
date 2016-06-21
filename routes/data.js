@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 router.post('/export', function(req,res,next){
 	//calls backup.bat script which exports database to JSON and CSV files with date/time of export
 	const spawn = require('child_process').spawn;
-	const bat = spawn('cmd.exe', ['/c', 'backup.bat']);
+	const bat = spawn('cmd.exe', ['/c', 'export.bat']);
 
 	bat.stdout.on('data', (data) => {
 		console.log('stdout: ', data);

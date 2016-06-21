@@ -37,4 +37,7 @@ data
 backup
 
 # db backup script
-backup.bat
+export.bat
+
+# chart html
+chart.html

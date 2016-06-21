@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1= title
+	p Welcome to #{title}
+	form(method="get", action="/results")
+		select(name="pick")
+			option(value="all_total") Answers total (Bar)
+			option(value="count_one") Filter only 1 device (Bar)
+			option(value="count_two") Filter only 2 devices (Bar)
+			option(value="all_timeused") Answers by time used (Bar)
+			option(value="all_count") Answers by ear (Bar)
+			option(value="all_ear") By ear (Pie)
+			option(value="all_time") By time (Pie)
+			option(value="all_type") By type (Pie)
+			#option(value="")
+		input(type="submit" value="Submit")
+	if {last}
+		p This chart: #{last}
+	iframe(src="#{chart}" width=1500 height=900 frameborder=0)
